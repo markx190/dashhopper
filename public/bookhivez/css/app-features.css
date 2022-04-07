@@ -1,0 +1,156 @@
+/* Main */
+body {
+    padding-top: 56px;
+    /* font-family: 'sans serif'; */
+    font-family: "Open Sans", sans-serif;
+}
+
+.display-3 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* footer */
+.con-height {
+    height: 1em;
+}
+
+.footer {
+    margin-top: 285px;   
+}
+
+/* jumbo buttons register and donate */
+.donate {
+    width: 141px;
+}
+
+/* Modals */
+.modal-header {
+    background-color: #DC3545;
+    height: 45px;
+}
+
+#login-label {
+    margin-top: -6px;
+    margin-left: -3px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+#register-label {
+    margin-top: 10px;
+    margin-left: 12px;
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.spinner-red-login {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+.register-con {
+    margin-top: 3px;
+}
+
+.first-row {
+    margin-top: -6px;
+}
+
+.second-row {
+    margin-top: -6px;
+}
+
+#hic-name-text {
+    font-size: 14px;
+}
+
+#hic-region-text {
+    font-size: 14px;
+}
+
+#hic-admin-contact-no-text {
+    font-size: 14px;
+}
+
+#hic-type-text {
+    font-size: 14px;
+}
+
+#hic-admin-text {
+    font-size: 14px;
+}
+
+#hic-email-text {
+    font-size: 14px;
+}
+
+#hic-email-valie-text {
+    font-size: 14px;
+}
+
+#hic-firstname-text{
+    font-size: 14px;
+}
+
+#hic-lastname-text{
+    font-size: 14px;
+}
+
+#hic-password-text {
+    font-size: 14px;
+}
+
+#hic-password-con-text {
+    font-size: 14px;
+}
+
+.rd-alert-margin {
+    margin-top: 10px;
+}
+
+/* Login Modal */
+.s-login {
+    margin-top: -25px;
+}
+
+.email-margin {
+    margin-top: -15px;
+}
+
+.header-image {
+    height: 17em;
+    background-image: url('/images/places/transits.jpg'); 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.footer-h {
+    padding-bottom: 1rem!important;
+    background-color: #F9690E;
+}
+
+.footer-h {
+    padding-top: 1rem!important;
+}
+
+.modal-header-new {
+    background-color: #006442;
+    height: 3em; 
+    color: #FFFFFF;
+}
+
+.d-back {
+    background-color: #F9690E;
+
+}
+
+.display-h1 {
+    color: #03A678;   
+}
+
+
+
+

@@ -1,0 +1,295 @@
+/* dashboard */
+.dash-active {
+    margin-top: 10px;
+}
+
+.inter-settings {
+    margin-top: -16px;
+}
+
+.activity {
+    margin-top: -16px;       
+}
+
+.spinner-red-dash {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 40px;
+}
+
+.spinner-red-users {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 16px;
+}
+
+.spinner-red-docs {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: -9px;
+}
+
+/* profile picture */
+
+#rd-profile-pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 3px;
+}
+
+#hic-data-margin {
+    margin-top: -10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.profile-img {
+    margin-top: -17px;
+}
+
+.hci-label {
+    margin-top: -3px;
+}
+
+.hci-address {
+    margin-top: 6px;
+}
+
+#docs-w {
+    width: 9em;
+}
+
+.folder {
+    margin-left: 80px;
+}
+
+.folder {
+    margin-left: -20px;
+}
+
+#docs-w {
+    width: 8.8em;
+}
+
+/* Change Avatar */
+.edit-avatar {
+    background: #F9690E;
+    height: 40px;
+    color: #FFFFFF
+}
+
+/* Add Document */
+.add-documents {
+    background: #F9690E;
+    height: 40px;
+    color: #FFFFFF
+}
+
+.add-bus {
+    background: #F9690E;
+    height: 40px;
+    color: #FFFFFF
+}
+
+.edit-bus {
+    background: #F9690E;
+    height: 40px;
+    color: #FFFFFF
+}
+
+.delete-bus {
+    background: #F9690E;
+    height: 40px;
+    color: #FFFFFF
+}
+
+.delete-employees {
+    background: #F9690E;
+    height: 40px;
+    color: #FFFFFF
+}
+
+#add-docs-file {
+    height: 2.7em;
+}
+
+#edit-docs-file {
+    height: 2.7em;
+}
+
+#add-docs-name {
+    margin-top: -10px;
+}
+
+#delete-docs-name {
+    font-size: 16px;
+}
+
+#add-docs-file {
+    margin-top: -10px;
+}
+
+.d-file {
+    margin-top: -10px;
+}
+
+.charts-docs {
+    margin-top: 3px;
+}
+
+#header-label {
+    margin-top: 8px;
+    margin-left: 10px;
+}
+
+#edit-input-avatar {
+    height: 2.7em;
+}
+
+#view-profile-avatar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 3px;
+}
+
+.alert-margin {
+    margin-top: 10px;
+    margin-left: 22px;
+}
+
+.add-docs-btn {
+    margin-top: 17px;
+}
+
+.alert-success {
+    width: 70em;
+}
+
+/* Side Links */
+.side-links {
+    cursor: pointer;
+}
+
+#profile {
+    margin-top: -20px;
+}
+
+.view-profile {
+    margin-top: -15px;
+}
+
+.edit-profile {
+    margin-top: -15px;
+}
+
+.docs {
+    margin-top: -17px;
+}
+
+/* Notif */
+.rd-btn {
+    height: 1.8em;
+    width: 2.8em;
+    margin-left: 5%;
+}
+
+#notif-label {
+    margin-top: -42px;
+    margin-left: 10px;
+}
+
+#med-icon {
+    margin-top: -6px;
+    margin-left: -10px;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+/* User Search and Datatable */
+#user-search-btn {
+    margin-top: 35px;
+}
+
+#e-hic-name {
+    margin-top: -12px;
+    font-weight: bold;
+}
+
+#e-hic-email {
+    margin-top: -12px;
+    font-weight: bold;
+}
+
+#d-hic-name {
+    margin-top: -12px;
+    font-weight: bold;
+}
+
+#e-hic-created-at {
+    margin-top: -12px;
+    font-weight: bold;
+}
+
+.radio-s {
+    margin-top: -26px;
+}
+
+.notif-label {
+    margin-left: -20px;
+    margin-top: -45px;
+}
+
+.list {
+    margin-top: -3px;
+    margin-left: 10px;
+    width: 30em;
+}
+
+.check {
+    color: #BD2130;
+}
+
+/* Accept New Account Modal */
+#new-hic-member {
+    font-size: 14px;
+}
+
+.accept-margin {
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+/* Add Items Modal */
+.pur-from-props {
+    margin-top: -1px;
+}
+
+/* App Purchase Modal */
+.purchase {
+    margin-top: -10px; 
+}
+
+.vel_nav {
+    background-color: #F9690E;
+}
+
+.modal-header-new {
+    background-color: #F9690E;
+}
+
+#register-label {
+    margin-top: 16px;
+    margin-left: 18px;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
