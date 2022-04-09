@@ -23,43 +23,33 @@
     <div class="row">
         <div class="col-md-3">
             <label><b>Company</b></label>
-                <input id="edit-t-company-name" type="text" class="form-control" name="company_name" readonly> 
-                    <input id="edit-trip-id" type="hidden" class="form-control" name="id">
-                    <input id="edit-t-bus-id-no" type="hidden" class="form-control" name="bus_id_no"> 
-                <input id="edit-t-bus-avatar" type="hidden" class="form-control" name="bus_avatar"> 
-            <span id="edit-t-company-name-text"></span>
+            <p id="delete-company-name-label"></p>
         </div>
         <div class="col-md-3">
             <label><b>Terminal</b></label>
-                <input id="edit-t-site-terminal" type="text" class="form-control" name="site_terminal" readonly> 
-            <span id="edit-t-site-terminal-text"></span>
+            <p id="delete-site-terminal-label"></p>
         </div>
         <div class="col-md-3">
-            <label><b>Bus Number</b></label>
-                <input id="edit-t-bus-number" type="text" class="form-control" name="bus_number" readonly> 
-            <span id="edit-t-bus-number-text"></span>
+            <label><b>Bus Number</b></label> 
+            <p id="delete-bus-number-label"></span>
         </div>
         <div class="col-md-3">
             <label><b>Bus Type </b></label>
-                <select id="edit-trip-bus-type" class="form-control" name="bus_type">
-                    <option></option>
-                </select>
-            <span id="edit-t-bus-type-text"></span>
+            <p id="delete-bus-type-label"></p>
         </div>
         <div class="col-md-3">
             <label><b>No. of Seats</b></label>
-                <input id="edit-t-no-of-seats" type="text" class="form-control" name="no_of_seats" readonly> 
-            <span id="edit-t-no-of-seats-text"></span>
+            <p id="delete-no-of-seats-label"></p>
         </div>
-        <div class="col-md-3 edit-trip-wifi">
+        <div class="col-md-3 delete-trip-wifi">
             <label><b>Wifi</b></label>
-                <input id="edit-trip-with-wifi" type="checkbox" class="form-control" value="Yes" name="with_wifi"> 
-            <span id="edit-t-wifi-text"></span>
+                <input id="delete-trip-with-wifi" type="checkbox" class="form-control" value="Yes" name="with_wifi"> 
+            <span id="delete-t-wifi-text"></span>
         </div>
-        <div class="col-md-3 edit-trip-cr">
+        <div class="col-md-3 delete-trip-cr">
             <label><b>Comfort Room</b></label>
-                <input id="edit-trip-with-cr" type="checkbox" class="form-control" value="Yes" name="with_cr"> 
-            <span id="edit-t-cr-text"></span>
+                <input id="delete-trip-with-cr" type="checkbox" class="form-control" value="Yes" name="with_cr"> 
+            <span id="delete-t-cr-text"></span>
         </div> 
         <div class="col-md-3">
             <label><b>Fare Amount</b></label>

@@ -169,8 +169,10 @@ function showEditTripsModal(button){
     $('#edit-trip-driver-name').html('<select class="form-control select-edit-t-time-ap" name="time_ap"><option>'+ button.getAttribute('data-driver_name') +'</option><option></option><option value="">PM</option></select>');
     
     var editWithWifiVal = button.getAttribute('data-with_wifi'); 
+    console.log('wifi: ', editWithWifiVal);
     var editTripWithCrVal = button.getAttribute('data-with_cr'); 
-
+    console.log('Cr: ', editTripWithCrVal);
+    
     var editTripBusAvatar = button.getAttribute('data-bus_avatar');
         $('#e-trip-bus-avatar').attr('src', '/uploads/documents/'+ editTripBusAvatar +'');
 
@@ -207,14 +209,13 @@ function showEditTripsModal(button){
         const eTripNoOfSeats = $('.edit-trips-form input[name="no_of_seats"]');
         const eTripNo_of_seats = eTripNoOfSeats.val();
         
-        const eTripWithWifi = $('.select-edit-trip-wifi').val();
+        const eTripWithWifi = $('.edit-trips-form input[name="with_wifi"]');
         const eTripWith_wifi = eTripWithWifi;
 
-        const eTripWithCr = $('.select-edit-trip-cr').val();
+        const eTripWithCr = $('.edit-trips-form input[name="with_cr"]');
         const eTripWith_cr = eTripWithCr;
 
         const eTripBusType = $('#edit-trip-bus-type').val();
-        console.log('bus type: ', eTripBusType);
         const eTripBus_type = eTripBusType;
 
         const eTripFareAmount = $('.edit-trips-form input[name="fare_amount"]');
@@ -427,38 +428,47 @@ function showDeleteTripsModal(button){
         $('#delete-trips-btn').attr('disabled', false);
     }  
     
-    dScheduleId = button.getAttribute('data-employee_id');
-    var dCompanyName = button.getAttribute('data-company_name');
-    var dTerminal = button.getAttribute('data-site_terminal');
-    var dEmployeeIdNo = button.getAttribute('data-employee_id_no');
-    var dEmployeeFirstname = button.getAttribute('data-firstname');
-    var dEmployeeLastname = button.getAttribute('data-lastname');
-    var dEmployeeContactNo = button.getAttribute('data-contact_number');
-    var dEmployeePosition = button.getAttribute('data-employee_position');
-    var dEmployeeAvatar = button.getAttribute('data-employee_avatar');
+    dTripId = button.getAttribute('data-s_id');
+    var dTripCompanyName = button.getAttribute('data-company_name');
+    var dTripTerminal = button.getAttribute('data-site_terminal');
+    var dTripBusNumber = button.getAttribute('data-bus_number');
+    var dTripBusType = button.getAttribute('data-bus_type');
+    var dTripSeatNumber = button.getAttribute('data-no_of_seats');
     
-    $('#company-name-label').text(dCompanyName);
-    $('#site-terminal-label').text(dTerminal);
-    $('#emloyee-id-no-label').text(dEmployeeIdNo);
-    $('#employee-firstname-label').text(dEmployeeFirstname +' '+ dEmployeeLastname);
-    $('#employee-contact-no-label').text(dEmployeeContactNo);
-    $('#employee-position-label').text(dEmployeePosition);
-    
-    $('#d-employee-avatar').attr('src', '/uploads/avatars/'+ dEmployeeAvatar +'');
+    var deleteTripWithWifiVal = button.getAttribute('data-with_wifi'); 
+    var deleteTripWithCrVal = button.getAttribute('data-with_cr'); 
 
+    $('#delete-company-name-label').text(dTripCompanyName);
+    $('#delete-site-terminal-label').text(dTripTerminal);
+    $('#delete-bus-number-label').text(dTripBusNumber);
+    $('#delete-bus-type-label').text(dTripBusType);
+    $('#delete-no-of-seats-label').text(dTripSeatNumber);
+
+    if (deleteTripWithWifiVal == 'Yes'){
+        $('.delete-trip-wifi').html('<div class="col-md-3"><label><b>Wifi</b></label><input type="checkbox" class="form-control" value="Yes" name="with_wifi" checked><span id="d-with-wifi-text"></span></div>');
+    } else {
+        $('.delete-trip-wifi').html('<div class="col-md-3"><label><b>Wifi</b></label><input type="checkbox" class="form-control" value="Yes" name="with_wifi"><span id="d-with-wifi-text"></span></div>');
+    }
+
+    if (deleteTripWithCrVal == 'Yes'){
+        $('.delete-trip-cr').html('<div class="col-md-6"><label><b>CR</b></label><input type="checkbox" class="form-control" value="Yes" name="with_cr" checked><span id="e-with-cr-text"></span></div>');
+    } else {
+        $('.delete-trip-cr').html('<div class="col-md-6"><label><b>CR</b></label><input type="checkbox" class="form-control" value="Yes" name="with_cr"><span id="e-with-cr-text"></span></div>');
+    }
+    
     $('.d-employee-btn').html('<button id="delete-employee-btn" type="submit" name="Delete" class="btn btn-danger btn-sm pull-right s-btn"><i class="fa fa-delete"></i> Delete</button>')
     $('.delete-employees-form').on('submit', function(event){
         event.preventDefault();
 
         $('#delete-employee-btn').attr('disabled', true);
-        $('#delete-employee-id').html('<input id="bus-id" type="hidden" value="'+ dScheduleId +'" name="id" />');
+        $('#delete-employee-id').html('<input id="bus-id" type="hidden" value="'+ dTripId +'" name="id" />');
        
-    if (dScheduleId) {
-        var deleteSchedulesForm = $('#delete-schedules-form')[0];
+    if (dTripId) {
+        var deleteTripsForm = $('#delete-trips-form')[0];
         $.ajax({
             url: "{{ url('/delete_schedules') }}",
             method:"POST",
-            data: new FormData(deleteSchedulesForm),
+            data: new FormData(deleteTripsForm),
             contentType: false,
             cache: false,
             dataType: 'JSON',

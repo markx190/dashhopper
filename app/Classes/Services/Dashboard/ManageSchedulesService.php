@@ -175,7 +175,7 @@ class ManageSchedulesService
                             data-travel_status="'. $data->travel_status .'"
                             data-created_by="'. $data->created_by .'"
                             data-created_at="'. $data->created_at .'"
-                            onclick="deleteSchedulesModal(this)">
+                            onclick="showDeleteTripsModal(this)">
                             <i class="fa fa-trash"></i> Delete
                         </button>
                     </a>

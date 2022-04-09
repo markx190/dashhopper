@@ -22,6 +22,8 @@ class Schedules extends Model
             $updatedSchedules->company_name = $request->company_name;
             $updatedSchedules->bus_type = $request->bus_type;
             $updatedSchedules->fare_amount = $request->fare_amount;
+            $updatedSchedules->with_wifi = $request->with_wifi;
+            $updatedSchedules->with_cr = $request->with_cr;
             $updatedSchedules->travel_date = $request->travel_date;
             $updatedSchedules->travel_time = $request->travel_time;
             $updatedSchedules->time_ap = $request->time_ap;
@@ -42,9 +44,9 @@ class Schedules extends Model
         }
     }
 
-    public static function saveDeleteLink($request)
+    public static function saveDeleteSchedules($request)
     {
-        $deletedLinks = self::find($request->dNavId)->delete();
+        $deletedSchedules = self::find($request->dNavId)->delete();
             return response()->json('Deleted');
     }
 

@@ -10,9 +10,9 @@
 <div class="card-header docs-h">
     <i class="fa fa-list"></i>
         List of Schedules
-            </div>
-        <div class="row users-spinner">
-    </div> 
+        </div>
+    <div class="row users-spinner">
+</div> 
 <div class="card-body docs-body">
     <form id="filter-bus-units-form">
         <div class="row">
@@ -22,17 +22,17 @@
                         <option></option>
                         <option value="All">All</option>
                         <option value="Ordinary">Ordinary</option>
-                        <option value="Economy">Economy</option> 
-                        <option value="Semi Deluxe">Semi Deluxe</option>     
-                        <option value="Deluxe">Deluxe</option>     
-                    </select>
-                <span id="bus-type-text"></span>  
-           </div>
-        <div class="col-md-3">
-            <button id="btnSearchSchedules" style="margin-top: 34px;" class="btn btn-success btn-sm" onclick="filterSchedules(event)"><i class="fa fa-search"></i> Submit</button>                         
-            </div>
+                    <option value="Economy">Economy</option> 
+                <option value="Semi Deluxe">Semi Deluxe</option>     
+            <option value="Deluxe">Deluxe</option>     
+        </select>
+    <span id="bus-type-text"></span>  
+</div>
+<div class="col-md-3">
+    <button id="btnSearchSchedules" style="margin-top: 34px;" class="btn btn-success btn-sm" onclick="filterSchedules(event)"><i class="fa fa-search"></i> Submit</button>                         
         </div>
-   </form>
+    </div>
+</form>
 <br>
 <div class="table-responsive">
     <table id="schedules-datatable" class="table table-bordered" width="100%" cellspacing="0">
@@ -64,7 +64,7 @@
     }
 </style>
 @include('velhopper.modals.edit_trips_modal') 
-@include('velhopper.modals.delete_schedules_modal') 
+@include('velhopper.modals.delete_trips_modal') 
 @include('velhopper.back_scripts.manage_schedules') 
 
  
