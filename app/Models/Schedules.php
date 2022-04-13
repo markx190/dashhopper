@@ -46,7 +46,7 @@ class Schedules extends Model
 
     public static function saveDeleteSchedules($request)
     {
-        $deletedSchedules = self::find($request->dNavId)->delete();
+        $deletedSchedules = self::find($request->id)->delete();
             return response()->json('Deleted');
     }
 

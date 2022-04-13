@@ -185,6 +185,20 @@ class ManageBusUnitsService
         $busUnits->no_of_seats = $request->no_of_seats;
         $busUnits->with_wifi = $request->with_wifi;
         $busUnits->with_cr = $request->with_cr;
+
+        if ($request->no_of_seats == '32'){
+            $busUnits->s_1 = 'Seat 1';
+            $busUnits->s_2 = 'Seat 2';
+            $busUnits->s_3 = 'Seat 3';
+            $busUnits->s_4 = 'Seat 4';
+            $busUnits->s_5 = 'Seat 5';
+            $busUnits->s_6 = 'Seat 6';
+            $busUnits->s_7 = 'Seat 7';
+            $busUnits->s_8 = 'Seat 8';    
+            $busUnits->s_9 = 'Seat 9';    
+            $busUnits->s_10 = 'Seat 10';    
+        }
+        
         $busUnits->created_by = Auth::user()->user_firstname .' '. Auth::user()->user_lastname;
 
         if ($validation->passes()){

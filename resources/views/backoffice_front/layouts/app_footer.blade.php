@@ -1,7 +1,7 @@
 <br>
 <footer class="footer-h">
     <div class="container">
-    <p class="m-0 text-left text-white">dashhopper &copy; All Rights Reserved</p>
+    <p class="m-0 text-left text-white">All Rights Reserved &copy; Dashhopper by Galileo Platform Inc.</p>
 </div>
 </footer>
     <script src="/bookhivez/vendor/jquery/jquery.min.js"></script>

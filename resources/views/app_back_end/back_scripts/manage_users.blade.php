@@ -82,15 +82,14 @@
     }
 
     function editUser(userId, editUserBtn, button){
-
         $('#editUsersModal').modal('show');
         
         if (editUserBtn !== 'Set'){
             $('#users-l').text('Edit User');
-            $('.u-btn').html('<button id="edit-user-btn" type="button" name="Save" class="btn btn-success btn-sm pull-right s-btn">Save</button>')
+            $('.u-btn').html('<button id="edit-user-btn" type="button" name="Save" class="btn btn-success btn-sm pull-right s-btn"><i class="fa fa-save"></i> Save</button>')
             $('.f-user').attr('id', 'edit-user-form');
 
-            $('.row-user-name').html('<div class="col-md-3"><div class="form-group"><label>Health Care Insitution</label><h6 id="e-hic-name"></h6><input type="hidden" id="e-hic-id" name="id"><span id="e-hic-name-text"></span></div></div><div class="col-md-3"><div class="form-group"><label>Member since</label><h6 id="e-hic-created-at"></h6></div></div>');
+            $('.row-user-name').html('<div class="col-md-3"><div class="form-group"><label>Company</label><h6 id="e-hic-name"></h6><input type="hidden" id="e-hic-id" name="id"><span id="e-hic-name-text"></span></div></div><div class="col-md-3"><div class="form-group"><label>Member since</label><h6 id="e-hic-created-at"></h6></div></div>');
             $('.row-user-status-l').html('<div class="col-md-3"><div class="form-group"><label>Status</label></div></div>');
             $('.row-user-status').html('<div class="col-md-8 radio-s"><div class="form-group"><input id="e-radio-new" type="radio" class="radio" value="New Account" name="hic_user_status"> New Account <input id="e-radio-pending" class="radio" type="radio" value="Pending" name="hic_user_status"> Pending <input id="e-radio-verified" class="radio" type="radio" value="Verified" name="hic_user_status"> Verified <span id="e-user-status-text"></span></div></div>');
             
@@ -162,7 +161,7 @@ $('#editUsersModal').modal('show');
 
 if (deleteUserBtn !== 'Edit'){
     $('#users-l').text('Delete User');
-    $('.u-btn').html('<button id="delete-user-btn" type="button" name="Delete" class="btn btn-danger btn-sm pull-right s-btn">Delete</button>')
+    $('.u-btn').html('<button id="delete-user-btn" type="button" name="Delete" class="btn btn-danger btn-sm pull-right s-btn"><i class="fa fa-trash"></i> Delete</button>')
     $('.f-user').attr('id', 'delete-user-form');
 
     $('.row-user-name').html('<div class="col-md-3"><div class="form-group"><label>Company</label><h6 id="d-hic-name"></h6><input type="hidden" id="d-hic-id" name="id"><span id="d-hic-name-text"></span></div></div></div>');

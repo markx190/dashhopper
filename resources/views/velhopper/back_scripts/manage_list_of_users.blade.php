@@ -96,7 +96,7 @@
         
         if (editUserBtn !== 'Set'){
             $('#users-l').text('Edit User');
-            $('.u-btn').html('<button id="edit-user-btn" type="button" name="Save" class="btn btn-success btn-sm pull-right s-btn">Save</button>')
+            $('.u-btn').html('<button id="edit-user-btn" type="button" name="Save" class="btn btn-success btn-sm pull-right s-btn"><i class="fa fa-save"></i> Save</button>')
             $('.f-user').attr('id', 'edit-user-form');
 
             $('.row-user-name').html('<div class="col-md-3"><div class="form-group"><label>Company</label><h6 id="e-hic-name"></h6><input type="hidden" id="e-hic-id" name="id"><span id="e-hic-name-text"></span></div></div><div class="col-md-3"><div class="form-group"><label>Member since</label><h6 id="e-hic-created-at"></h6></div></div>');

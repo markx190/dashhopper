@@ -180,74 +180,74 @@ function showRegistrationForm(event){
         }
     }
 
-    function checkEmail(){
-        $.ajax({
-            url: "{{ url('/check-email') }}",
-            method: 'POST',
-            data: {
-                _token: function(){
-                    return "{{ csrf_token() }}"
-                },
-            email
-            },
-            dataType: 'JSON',
-                success: function(response){
-                if (response.error != null){
-		            $('#hic-email').after('<span id="email-exist" class="input-email" style="color: #D24D57;">This email already exists</span>');             
-				} else {
-                    validateEntry();
-                }
-            }
-        });  
-    }
-
-    function callRegisterUser(){
-	    $.ajax({
-        url: "{{ url('/register-user') }}",
+function checkEmail(){
+    $.ajax({
+        url: "{{ url('/check-email') }}",
         method: 'POST',
-        data: { 
-		    _token: function() {
-                return "{{csrf_token()}}"
+        data: {
+            _token: function(){
+                return "{{ csrf_token() }}"
             },
-		    hic_name,
-            user_account_type,
-            hic_terminal_network,
-		    user_firstname,
-            user_lastname,
-            hic_admin_contact_no,
-            hic_position,
-            hic_user_status,
-            hic_user_level,
-		    hic_email,
-            hic_password
-	    },
-	    cache: false,
-            success: function (html){
-            $('.s-space').after('<div style="margin-top: 15px;" class="col-md-12"><div id="alert-text" style="margin-left: 11px;" class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> A new user was created</div></div>');
-            setTimeout(goToListOfUsers, 3000);
-	        }
-	    });
-    }
+        email
+        },
+        dataType: 'JSON',
+            success: function(response){
+            if (response.error != null){
+                $('#hic-email').after('<span id="email-exist" class="input-email" style="color: #D24D57;">This email already exists</span>');             
+            } else {
+                validateEntry();
+            }
+        }
+    });  
+}
 
-    function removeRegisterUserModal(){
-        $('#alert-text').hide();
-        $('#registerModal').modal('hide');
-        setTimeout(redirectToUserDashboard, 1000);
-    }
+function callRegisterUser(){
+    $.ajax({
+    url: "{{ url('/register-user') }}",
+    method: 'POST',
+    data: { 
+        _token: function() {
+            return "{{csrf_token()}}"
+        },
+        hic_name,
+        user_account_type,
+        hic_terminal_network,
+        user_firstname,
+        user_lastname,
+        hic_admin_contact_no,
+        hic_position,
+        hic_user_status,
+        hic_user_level,
+        hic_email,
+        hic_password
+    },
+    cache: false,
+        success: function (html){
+        $('.s-space').after('<div style="margin-top: 15px;" class="col-md-12"><div id="alert-text" style="margin-left: 11px;" class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> A new user was created</div></div>');
+        setTimeout(goToListOfUsers, 3000);
+        }
+    });
+}
 
-    function redirectToUserDashboard(){
-        window.location.href = "{{ url('/dashboard') }}";
-    }
+function removeRegisterUserModal(){
+    $('#alert-text').hide();
+    $('#registerModal').modal('hide');
+    setTimeout(redirectToUserDashboard, 1000);
+}
 
-    function isMobile(mobileNumber){
-	    var phone_pattern = /^([0-9]{11})|(\([0-9]{0}\))/;
-	 
-        if(phone_pattern.test(mobileNumber)){
-		    return true;
-	    } else {
-		    return false;
-	    }
+function redirectToUserDashboard(){
+    window.location.href = "{{ url('/dashboard') }}";
+}
+
+function isMobile(mobileNumber){
+    var phone_pattern = /^([0-9]{11})|(\([0-9]{0}\))/;
+    
+    if(phone_pattern.test(mobileNumber)){
+        return true;
+    } else {
+        return false;
     }
+}
 
 function IsEmail(email) {
     var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
@@ -273,8 +273,8 @@ function goToListOfUsers(event){
             $('.docs-body').hide();
             $('.users-spinner').html('<div class="row spinner-red-users"><div class="col-md-12"><img class="displayed" src="/bookhivez/images/ajax-loader-circle.gif" /></div>');  
             setTimeout(loadUsersDataTable, 1000);
-            }
-        });   
-    }
+        }
+    });   
+}
 
 </script>

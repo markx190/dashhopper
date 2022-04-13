@@ -101,7 +101,7 @@ function showAddBusUnitsModal(button){
         $('#add-bus-btn').attr('disabled', false);
     }  
 
-    $('.add-bus-btn').html('<button id="add-bus-btn" type="submit" name="Submit" class="btn btn-success btn-sm pull-right s-btn">Submit</button>')
+    $('.add-bus-btn').html('<button id="add-bus-btn" type="submit" name="Submit" class="btn btn-success btn-sm pull-right s-btn"><i class="fa fa-save"></i> Submit</button>')
     $('.add-bus-units-form').on('submit', function(event){
         event.preventDefault();
 
@@ -370,7 +370,6 @@ function showAddTripsModal(button){
         });
 
         if (trip_company_name) {
-            alert('yeah');
             $.ajax({
                 url: "{{ url('/add_trips') }}",
                 method:"POST",
@@ -446,7 +445,7 @@ function showEditBusUnitsModal(button){
     }
     // withWifiVal == 'Yes' ? $('#e-with-wifi').html('<input type="checkbox" class="form-control" value="Yes" name="with_wifi" checked>') : $('#e-with-wifi').html('<input type="checkbox" class="form-control" name="withi_wifi">');
 
-    $('.e-bus-btn').html('<button id="edit-bus-btn" type="submit" name="Update" class="btn btn-success btn-sm pull-right s-btn">Submit</button>')
+    $('.e-bus-btn').html('<button id="edit-bus-btn" type="submit" name="Update" class="btn btn-success btn-sm pull-right s-btn"><i class="fa fa-save"></i> Submit</button>')
     $('.edit-bus-units-form').on('submit', function(event){
         event.preventDefault();
         $('#edit-bus-btn').attr('disabled', true);
@@ -661,12 +660,12 @@ function showDeleteBusUnitsModal(button){
     });
 }
 
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-function convertDate(date_str) {
-    temp_date = date_str.split("-");
-    return months[Number(temp_date[1]) - 1] +" " + temp_date[2] + "," + temp_date[0];
-}
-console.log(convertDate("2022-03-11"));
+// function convertDate(date_str) {
+//     temp_date = date_str.split("-");
+//     return months[Number(temp_date[1]) - 1] +" " + temp_date[2] + "," + temp_date[0];
+// }
+// console.log(convertDate("2022-03-11"));
 
 </script>

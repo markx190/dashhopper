@@ -21,8 +21,8 @@
 <div class="modal-footer">
     <div class="row">
         </div>
-            <button id="delete-user-button" type="button" class="btn btn-danger btn-sm">Delete</button>
-                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            <button id="delete-user-button" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i> Delete</button>
+                <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 </div>
             </div>
         </div>

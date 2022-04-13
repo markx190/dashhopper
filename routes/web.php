@@ -34,6 +34,9 @@ Route::post('/add_schedules', 'Velhopper\ManageSchedulesController@addSchedules'
 Route::post('/edit_schedules', 'Velhopper\ManageSchedulesController@editSchedules')->middleware('authenticated');
 Route::post('/delete_schedules', 'Velhopper\ManageSchedulesController@deleteSchedules')->middleware('authenticated');
 
+// Search Trips
+Route::post('/search_trips', 'Velhopper\SearchTripsController@callSearchTrips');
+
 // Manage Employees
 Route::get('/manage_employees', 'Velhopper\ManageEmployeesController@index')->middleware('authenticated');
 Route::get('/employees_datatables', 'Velhopper\ManageEmployeesController@employeesDtAjax');

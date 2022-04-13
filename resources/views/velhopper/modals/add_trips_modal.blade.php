@@ -119,7 +119,7 @@
 <div class="modal-footer">
     <div class="row add-trip-btn">
         </div>
-            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
                 </div>
             </div>
         </div>

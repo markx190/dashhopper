@@ -124,8 +124,8 @@
     </div>
 </section>
 <div class="modal-footer">
-    <button id="reg-btn" type="button" value="Save" class="btn btn-success btn-sm pull-right" onclick="submitRegisterUser(event)">Save</button>
-        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+    <button id="reg-btn" type="button" value="Save" class="btn btn-success btn-sm pull-right" onclick="submitRegisterUser(event)"><i class="fa fa-save"></i> Save</button>
+        <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
             </div>
             </div>
         </div>

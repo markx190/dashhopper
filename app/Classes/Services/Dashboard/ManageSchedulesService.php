@@ -201,7 +201,7 @@ class ManageSchedulesService
     public function deleteSchedules(Request $request)
     {
         try {
-            $deletedSchedules =  Schedules::saveDeletedSchedules($request);
+            $deletedSchedules =  Schedules::saveDeleteSchedules($request);
             return $deletedSchedules;
         } catch (Exception $e){
             return $e->getMessage(); 

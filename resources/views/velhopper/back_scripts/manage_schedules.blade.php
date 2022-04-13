@@ -189,7 +189,7 @@ function showEditTripsModal(button){
     }
     // withWifiVal == 'Yes' ? $('#e-with-wifi').html('<input type="checkbox" class="form-control" value="Yes" name="with_wifi" checked>') : $('#e-with-wifi').html('<input type="checkbox" class="form-control" name="withi_wifi">');
 
-    $('.edit-trip-btn').html('<button id="edit-trip-btn" type="submit" name="Update" class="btn btn-success btn-sm pull-right s-btn">Submit</button>')
+    $('.edit-trip-btn').html('<button id="edit-trip-btn" type="submit" name="Update" class="btn btn-success btn-sm pull-right s-btn"><i class="fa fa-save"></i> Save</button>')
     $('.edit-trips-form').on('submit', function(event){
         event.preventDefault();
         $('#edit-trip-btn').attr('disabled', true);
@@ -347,6 +347,7 @@ function showEditTripsModal(button){
 
 function goToListofUpdatedSchedules(event){
     $('#editTripsModal').modal('hide');
+    $('#deleteTripsModal').modal('hide');
     $.ajax({
         url: '{{ url("/manage_schedules") }}',
         method: 'GET',
@@ -413,10 +414,9 @@ function loadUpdatedSchedulesDataTable(){
     });
 }
 
-var dEmployeeId = '';
+var dTripId = '';
 function showDeleteTripsModal(button){
     $('#deleteTripsModal').modal('show');
-
     $('.delete-trips-pad').hide();      
     $('#delete-trips-btn').attr('disabled', true); 
         $('.d-trips-space').html('<div class="spinner-dash" style="text-align: center;"><img class="displayed" src="/bookhivez/images/ajax-loader-circle.gif" /></div>');  
@@ -434,15 +434,40 @@ function showDeleteTripsModal(button){
     var dTripBusNumber = button.getAttribute('data-bus_number');
     var dTripBusType = button.getAttribute('data-bus_type');
     var dTripSeatNumber = button.getAttribute('data-no_of_seats');
+    var dTripFareAmount = button.getAttribute('data-fare_amount');
+    var dTripOriginAddress = button.getAttribute('data-origin_address');
+    var dTripDestinationAddress = button.getAttribute('data-destination_address');
+    var dTripDate = button.getAttribute('data-travel_date');
+    var dTripTime = button.getAttribute('data-travel_time');
+    var dTripTimeAp = button.getAttribute('data-time_ap');
+    var dTripDriver = button.getAttribute('data-driver_name');
+    var dTripConductor = button.getAttribute('data-conductor_name');
     
     var deleteTripWithWifiVal = button.getAttribute('data-with_wifi'); 
     var deleteTripWithCrVal = button.getAttribute('data-with_cr'); 
 
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+    function convertTripDate(date_str) {
+    temp_date = date_str.split("-");
+    return months[Number(temp_date[1]) - 1] +" " + temp_date[2] + ", " + temp_date[0];
+    }
+
+    var displayTripDate = convertTripDate(dTripDate);
+
+    $('.delete-schedules-id').attr('value', dTripId);
     $('#delete-company-name-label').text(dTripCompanyName);
     $('#delete-site-terminal-label').text(dTripTerminal);
     $('#delete-bus-number-label').text(dTripBusNumber);
     $('#delete-bus-type-label').text(dTripBusType);
     $('#delete-no-of-seats-label').text(dTripSeatNumber);
+    $('#delete-fare-amount-label').text(dTripFareAmount);
+    $('#delete-origin-address-label').text(dTripOriginAddress);
+    $('#delete-destination-address-label').text(dTripDestinationAddress);
+    $('#delete-travel-date-label').text(displayTripDate);
+    $('#delete-travel-time-label').text(dTripTime +' '+ dTripTimeAp);
+    $('#delete-travel-driver-label').text(dTripDriver);
+    $('#delete-travel-conductor-label').text(dTripConductor);
 
     if (deleteTripWithWifiVal == 'Yes'){
         $('.delete-trip-wifi').html('<div class="col-md-3"><label><b>Wifi</b></label><input type="checkbox" class="form-control" value="Yes" name="with_wifi" checked><span id="d-with-wifi-text"></span></div>');
@@ -456,15 +481,14 @@ function showDeleteTripsModal(button){
         $('.delete-trip-cr').html('<div class="col-md-6"><label><b>CR</b></label><input type="checkbox" class="form-control" value="Yes" name="with_cr"><span id="e-with-cr-text"></span></div>');
     }
     
-    $('.d-employee-btn').html('<button id="delete-employee-btn" type="submit" name="Delete" class="btn btn-danger btn-sm pull-right s-btn"><i class="fa fa-delete"></i> Delete</button>')
-    $('.delete-employees-form').on('submit', function(event){
+    $('.d-schedules-btn').html('<button id="delete-schedules-btn" type="submit" name="Delete" class="btn btn-danger btn-sm pull-right s-btn"><i class="fa fa-trash"></i> Delete</button>')
+    $('.delete-schedules-form').on('submit', function(event){
         event.preventDefault();
 
-        $('#delete-employee-btn').attr('disabled', true);
-        $('#delete-employee-id').html('<input id="bus-id" type="hidden" value="'+ dTripId +'" name="id" />');
+        $('#delete-schedules-btn').attr('disabled', true);
        
     if (dTripId) {
-        var deleteTripsForm = $('#delete-trips-form')[0];
+        var deleteTripsForm = $('.delete-schedules-form')[0];
         $.ajax({
             url: "{{ url('/delete_schedules') }}",
             method:"POST",
@@ -474,7 +498,7 @@ function showDeleteTripsModal(button){
             dataType: 'JSON',
             processData: false,
             success:function(data){
-                    $('.delete-alert-m').html('<div class="row"><div class="col-md-12 alert-margin"><div class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> An Employee was deleted</div></div></div>'); 
+                $('.delete-trip-alert-m').html('<div class="row"><div class="col-md-12 alert-margin"><div class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> Trip was deleted successfully</div></div></div>'); 
                     setTimeout(goToListofUpdatedSchedules, 3000);
                 } 
             });

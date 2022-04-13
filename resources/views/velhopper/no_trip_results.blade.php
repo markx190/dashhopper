@@ -1,25 +1,4 @@
-@include('app_front.layouts.app_header')
-<div class="container search-spinner">
-    <div class="header-space"></div>
-        <header class="jumbotron my-4 header-image">
-            <h1 class="display-h1">Your transit booking buddy</h1>
-                <div class="row">
-                    <div class="col-md-6">
-                    <div class="form-group">
-                </div>
-            </div>
-        </div>
-    </header>
-<div class="row">
-    <div class="col-md-12">
-        <b>When are you travelling? Check our daily provincial trip schedules</b>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <p><i class="fa fa-calendar"></i> Easy Booking </p>
-    </div>
-</div>
+<br />
 <div class="row booking-div">
     <div class="col-md-3">
         <label><b>Date</b></label>
@@ -28,13 +7,13 @@
 </div>
 <div class="col-md-3">
     <label><b>Type</b></label>
-        <select class="form-control s-bus-type" name="bus_type">
+        <select class="form-control s-booking-type" name="type_of_booking">
             <option></option>
             <option value="Ordinary">Ordinary</option>
             <option value="Economy">Economy</option>
             <option value="Semi Deluxe">Semi Deluxe</option>
-            <option value="Deluxe">Deluxe</option>
-        </select>
+        <option value="Deluxe">Deluxe</option>
+    </select>
     <span id="s-booking-type-text"></span>
 </div>
 <div class="col-md-3">
@@ -63,11 +42,16 @@
 <br />
     <div class="row">
         <div class="col-md-3">
-            <button id="search-travel-btn" class="btn btn-success btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
+            <button id="search-travel-btn" class="btn btn-success btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Submit</button>                         
         </div>
     </div>
 </div>
-<div style="height: 60px;">
+<br />
+<div class="row">
+    <div class="col-md-12">
+        <p>Sorry, No Trip Schedules Found</p>
+    </div>
 </div>
-@extends('app_front.layouts.app_footer')
 
+<div style="height: 75px;">
+</div>
