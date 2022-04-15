@@ -63,7 +63,7 @@
 <br />
     <div class="row">
         <div class="col-md-3">
-            <button id="search-travel-btn" class="btn btn-success btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
+            <button id="search-travel-btn" class="btn btn-primary btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
         </div>
     </div>
 </div>

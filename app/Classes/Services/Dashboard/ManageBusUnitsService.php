@@ -185,20 +185,6 @@ class ManageBusUnitsService
         $busUnits->no_of_seats = $request->no_of_seats;
         $busUnits->with_wifi = $request->with_wifi;
         $busUnits->with_cr = $request->with_cr;
-
-        if ($request->no_of_seats == '32'){
-            $busUnits->s_1 = 'Seat 1';
-            $busUnits->s_2 = 'Seat 2';
-            $busUnits->s_3 = 'Seat 3';
-            $busUnits->s_4 = 'Seat 4';
-            $busUnits->s_5 = 'Seat 5';
-            $busUnits->s_6 = 'Seat 6';
-            $busUnits->s_7 = 'Seat 7';
-            $busUnits->s_8 = 'Seat 8';    
-            $busUnits->s_9 = 'Seat 9';    
-            $busUnits->s_10 = 'Seat 10';    
-        }
-        
         $busUnits->created_by = Auth::user()->user_firstname .' '. Auth::user()->user_lastname;
 
         if ($validation->passes()){
@@ -238,6 +224,44 @@ class ManageBusUnitsService
         $trips->company_name = $request->company_name;
         $trips->site_terminal = $request->site_terminal;
         $trips->no_of_seats = $request->no_of_seats;
+        
+        if ($trips->no_of_seats == '32'){
+
+            $trips->seat_1 = '1';
+            $trips->seat_2 = '2';
+            $trips->seat_3 = '3';
+            $trips->seat_4 = '4';
+            $trips->seat_5 = '5';
+            $trips->seat_6 = '6';
+            $trips->seat_7 = '7';
+            $trips->seat_8 = '8';    
+            $trips->seat_9 = '9';    
+            $trips->seat_10 = '10';
+            $trips->seat_11 = '11';
+            $trips->seat_12 = '12';
+            $trips->seat_13 = '13';
+            $trips->seat_14 = '14';
+            $trips->seat_15 = '15';
+            $trips->seat_16 = '16';
+            $trips->seat_17 = '17';
+            $trips->seat_18 = '18';
+            $trips->seat_19 = '19';
+            $trips->seat_20 = '20';
+            $trips->seat_21 = '21';
+            $trips->seat_22 = '22';
+            $trips->seat_23 = '23';
+            $trips->seat_24 = '24';
+            $trips->seat_25 = '25';
+            $trips->seat_26 = '26';
+            $trips->seat_27 = '27';
+            $trips->seat_28 = '28';
+            $trips->seat_29 = '29';
+            $trips->seat_30 = '30';
+            $trips->seat_31 = '31';
+            $trips->seat_32 = '32';
+            $trips->seat_33 = '33';
+        }
+
         $trips->with_wifi = $request->with_wifi;
         $trips->with_cr = $request->with_cr;
         $trips->bus_avatar = $request->bus_avatar;

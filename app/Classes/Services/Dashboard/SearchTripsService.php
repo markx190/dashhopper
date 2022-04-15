@@ -22,6 +22,7 @@ class SearchTripsService
             $trips = DB::table('travel_schedules')
                             ->select(
                                     'id', 
+                                    'bus_id_no',
                                     'travel_date',
                                     'travel_time', 
                                     'time_ap', 

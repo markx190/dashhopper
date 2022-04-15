@@ -42,7 +42,7 @@
 <br />
     <div class="row">
         <div class="col-md-3">
-            <button id="search-travel-btn" class="btn btn-success btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
+            <button id="search-travel-btn" class="btn btn-primary btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
         </div>
     </div>
 </div>
@@ -58,9 +58,9 @@
             <br>
             Bus Type: <b>{{ $tResult->bus_type }}</b>
             <br>
-            Route: <b>{{ $tResult->origin_address }} to {{ $tResult->destination_address }}</b>
+            Terminal: <b>{{ $tResult->site_terminal }}</b>
             <br>
-            Fare Amount: <b>{{ $tResult->fare_amount }}</b>
+            Route: <b>{{ $tResult->origin_address }} to {{ $tResult->destination_address }}</b>
             <br>
             Departure Date: <b>{{ Carbon\Carbon::parse($tResult->travel_date)->format('F j, Y') }}</b>
             <br> 
@@ -69,18 +69,22 @@
             Aminities: 
                 <b>
                     @if($tResult->with_wifi)
-                    WIFI <i class="fa fa-check-circle" style="color: #26C281;"></i>
+                    <i class="fa fa-check-circle" style="color: #26C281;"></i> WIFI
                     @endif
                     @if($tResult->with_cr)
-                    CR <i class="fa fa-check-circle" style="color: #26C281;"></i>
+                    <i class="fa fa-check-circle" style="color: #26C281;"></i> CR
                     @endif
                 </b>
-        </div>
+            <br>
+            Fare Amount: <b>PHP {{ $tResult->fare_amount }}</b>
+            <br>
+        <a href="/select_trip_seat/{{ $tResult->id }}"><button id="search-travel-btn" class="btn btn-success btn-sm" onclick="bookATrip(this)"><i class="fa fa-bus"></i> Book</button></a>                         
+    </div>    
     @empty
         <div class="col-md-6">
             <p>Sorry, No Results Found</p>
         </div>
     @endforelse
 </div>
-<div style="height: 75px;">
+<div style="height: 95px;">
 </div>

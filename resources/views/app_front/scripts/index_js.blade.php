@@ -17,40 +17,8 @@
             $('#search-travel-btn').attr('disabled', false);
         });
 
-        // if (!searchBookingType){
-        //     $('#s-booking-type-text').text('Booking Type is Required').css('color', '#D24D57');
-        //     $('#search-travel-btn').attr('disabled', true);
-        // }
-
-        // $('.s-booking-type').bind('click', function(){
-        //     $('#s-booking-type-text').text('');
-        //     $('#search-travel-btn').attr('disabled', false);
-        // });
-
-        // if (!searchTravelOrigin){
-        //     console.log('origin: ', searchTravelOrigin);
-        //     $('#s-travel-origin-text').text('Origin is Required').css('color', '#D24D57');
-        //     $('#search-travel-btn').attr('disabled', true);
-        // }
-
-        // $('.s-travel-origin').bind('click', function(){
-        //     $('#s-travel-origin-text').text('');
-        //     $('#search-travel-btn').attr('disabled', false);
-        // });
-
-        // if (!searchTravelDestination){
-        //     $('#s-travel-destination-text').text('Destination is Required').css('color', '#D24D57');
-        //     $('#search-travel-btn').attr('disabled', true);
-        // }
-
-        // $('.s-travel-destination').bind('click', function(){
-        //     $('#s-travel-destination-text').text('');
-        //     $('#search-travel-btn').attr('disabled', false);
-        // });
-
-    if (searchTravelDate) {
+    if (searchTravelDate){
         $.ajax({
-            
             url: "{{ url('/search_trips') }}",
             method: 'POST',
             data: { 
@@ -65,7 +33,7 @@
             },
             cache: false,
             success:function(html){
-                $('.search-spinner').html('<div class="spinner-dash" style="text-align: center;"><img class="displayed" src="/bookhivez/images/ajax-loader-circle.gif" /></div>');  
+                $('.search-spinner').html('<br /><br /><div class="spinner-dash" style="text-align: center;"><img class="displayed" src="/bookhivez/images/ajax-loader-circle.gif" /></div>');  
                 setTimeout(hideSpinner, 1000); 
                 var sResults = html;
                 function hideSpinner(){
@@ -74,9 +42,10 @@
             }
         });
     }
-    
 }
 
-
-
+function bookATrip(button){
+    var bookId = button.getAttribute('data-bus-id');
+    console.log('id: ', bookId);
+}
 </script>
