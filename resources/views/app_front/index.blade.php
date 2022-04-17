@@ -63,11 +63,36 @@
 <br />
     <div class="row">
         <div class="col-md-3">
-            <button id="search-travel-btn" class="btn btn-primary btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
-        </div>
+        <button id="search-travel-btn" class="btn btn-primary btn-sm" onclick="submitBookingSearch(event)"><i class="fa fa-search"></i> Search</button>                         
     </div>
 </div>
-<div style="height: 60px;">
+<br>
+<hr>
+<div class="row">
+    <div class="col-md-12">
+        <i class="fa fa-newspaper-o"></i> <b>Support</b>
+    </div>
+    <div class="col-md-12">
+        Help Center
+        </div>
+    <div class="col-md-12">
+        Safety Information
+        </div>
+    <div class="col-md-12">
+        Refund and Cancellation
+        </div>
+    <div class="col-md-12">
+        Payment Methods
+        </div>
+    <div class="col-md-12">
+        Travel Response
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-3">
+        <i class="fa fa-paymaya"></i>  
+        </div>
+    </div>
 </div>
 @extends('app_front.layouts.app_footer')
 

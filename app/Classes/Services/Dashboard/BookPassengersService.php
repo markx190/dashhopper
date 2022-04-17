@@ -11,16 +11,17 @@ use DB;
 use Exception;
 use Auth;
 
-class SelectTripSeatService
+class BookPassengersService
 {
-    public function selectTripSeat($request)
+    public function bookPassenger($request)
     {
         try {
-            $tripSeats = Schedules::where('id', $request->id)->first();
-            return view('velhopper.select_seat_form', [
-                'tripSeats' => $tripSeats
+            $tripBookings = Schedules::where('id', $request->id)->first();
+            $seatNo = $request->seatNo;
+            return view('velhopper.book_passenger_form', [
+                'tripBooking' => $tripBookings,
+                'seatNo' => $seatNo
             ]);
-            
         } catch (\Exception $e) {
             return $e->getMessage();
         }        

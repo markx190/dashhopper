@@ -38,6 +38,8 @@ Route::post('/delete_schedules', 'Velhopper\ManageSchedulesController@deleteSche
 Route::post('/search_trips', 'Velhopper\SearchTripsController@callSearchTrips');
 //  Select Trip Seat
 Route::get('/select_trip_seat/{id}', 'Velhopper\SelectTripSeatController@callSelectTripSeat');
+// Book Passenger
+Route::get('/book_passenger/{id}/{seatNo}', 'Velhopper\BookPassengersController@bookPassenger');
 
 // Manage Employees
 Route::get('/manage_employees', 'Velhopper\ManageEmployeesController@index')->middleware('authenticated');

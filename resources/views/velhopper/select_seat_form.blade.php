@@ -2,21 +2,24 @@
 <br />
 <div class="container">
     <div class="col-md-5">
+        Bus: <b>{{ $tripSeats->bus_number }} - {{ $tripSeats->company_name }} - {{ $tripSeats->bus_type }}</b>
+            <br>
         Route: <b>{{ $tripSeats->origin_address }} to {{ $tripSeats->destination_address }}</b>
-        <br>
+            <br>
         Departure Date / Time: <b>{{ Carbon\Carbon::parse($tripSeats->travel_date)->format('F j, Y') }} {{ $tripSeats->travel_time .' '. $tripSeats->time_ap }}</b>
-        <br>
+            <br>
         Bus Terminal: <b>{{ $tripSeats->site_terminal }}</b>
-        <br>
+            <br>
         Fare Amount: <b>PHP {{ $tripSeats->fare_amount }}</b>    
     </div>
     <div class="col-md-4">
         Aminities: @if($tripSeats->with_wifi == 'Yes') <i  class="fa fa-check-circle" style="color: #26C281;"></i> WIFI @endif @if($tripSeats->with_cr == 'Yes') <i  class="fa fa-check-circle" style="color: #26C281;"></i> CR @endif
     </div>
 </div>
+<br>
 <div class="col-md-12" style="text-align: center;">
-    <button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_1 }}</button>
-    <button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_2 }}</button>
+    <a href="/book_passenger/{{ $tripSeats->id }}/{{ $tripSeats->seat_1 }}"><button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_1 }}</button></a>
+    <a href="/book_passenger/{{ $tripSeats->id }}/{{ $tripSeats->seat_2 }}"><button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_2 }}</button></a>
     &nbsp;
     <button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_3 }}</button>
     <button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_4 }}</button>
@@ -71,7 +74,7 @@
     <button id="search-travel-btn" class="btn btn-success btn-sm" style="width: 3em;">{{ $tripSeats->seat_33 }}</button>
 </div>
 <br />
-<p style="text-align: center;"><i class="fa fa-flag"></i> Passengers are required to report immediately to the terminal with their belongings 1 hour before departure. Bring your Vaccination Passport and valid Identification Cards</p>
-<div style="height: 10px;">
+<div class="container">
+    <i class="fa fa-newspaper-o"></i> Passengers are required to report immediately to the terminal with their belongings 1 hour before departure. Bring your Vaccination Passport and valid Identification Cards.</p>
 </div>
 @extends('app_front.layouts.app_footer')
