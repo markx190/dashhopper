@@ -29,4 +29,14 @@ class BookPassengersController extends Controller
         }
     }
 
+    public function addPassenger(Request $request)
+    {
+        try {
+            $addPassengers = $this->bookPassenger->addPassenger($request);
+            return $addPassengers;
+        } catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
+
 }

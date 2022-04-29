@@ -20,19 +20,19 @@
 <div class="container">
     <div class="col-md-3">
         <label>Bus Seat No.</label>
-        <input type="text" class="form-control" value="{{ $seatNo }}" name="seat_no" readonly />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->id }}" name="id" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->travel_id_no }}" name="travel_id_no" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->bus_no }}" name="bus_no" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->bus_id_no }}" name="bus_id_no" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->bus_type }}" name="bus_type" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->site_terminal }}" name="site_terminal" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->origin_address }}" name="origin_address" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->destination_address }}" name="destination_address" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->fare_amount }}" name="fare_amount" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->travel_date }}" name="travel_date" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->travel_time }}" name="travel_time" />
-        <input type="hidden" class="form-control" value="{{ $tripBooking->time_ap }}" name="time_ap" />
+        <input type="text" class="form-control p-seat-no" value="{{ $seatNo }}" name="seat_no" readonly />
+        <input type="hidden" class="form-control p-travel-id" value="{{ $tripBooking->id }}" name="travel_id" />
+        <input type="hidden" class="form-control p-travel-id-no" value="{{ $tripBooking->travel_id_no }}" name="travel_id_no" />
+        <input type="hidden" class="form-control p-bus-number" value="{{ $tripBooking->bus_no }}" name="bus_no" />
+        <input type="hidden" class="form-control p-bus-id-no" value="{{ $tripBooking->bus_id_no }}" name="bus_id_no" />
+        <input type="hidden" class="form-control p-bus-type" value="{{ $tripBooking->bus_type }}" name="bus_type" />
+        <input type="hidden" class="form-control p-site-terminal" value="{{ $tripBooking->site_terminal }}" name="site_terminal" />
+        <input type="hidden" class="form-control p-origin-address" value="{{ $tripBooking->origin_address }}" name="origin_address" />
+        <input type="hidden" class="form-control p-destination-address" value="{{ $tripBooking->destination_address }}" name="destination_address" />
+        <input type="hidden" class="form-control p-fare-amount" value="{{ $tripBooking->fare_amount }}" name="fare_amount" />
+        <input type="hidden" class="form-control p-travel-date" value="{{ $tripBooking->travel_date }}" name="travel_date" />
+        <input type="hidden" class="form-control p-travel-time" value="{{ $tripBooking->travel_time }}" name="travel_time" />
+        <input type="hidden" class="form-control p-time-ap" value="{{ $tripBooking->time_ap }}" name="time_ap" />
     </div>
     <div class="col-md-3">
         <label>Firstname</label>

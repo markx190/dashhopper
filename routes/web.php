@@ -40,6 +40,8 @@ Route::post('/search_trips', 'Velhopper\SearchTripsController@callSearchTrips');
 Route::get('/select_trip_seat/{id}', 'Velhopper\SelectTripSeatController@callSelectTripSeat');
 // Book Passenger
 Route::get('/book_passenger/{id}/{seatNo}', 'Velhopper\BookPassengersController@bookPassenger');
+Route::get('/add_passenger', 'Velhopper\BookPassengersController@addPassenger');
+
 
 // Manage Employees
 Route::get('/manage_employees', 'Velhopper\ManageEmployeesController@index')->middleware('authenticated');

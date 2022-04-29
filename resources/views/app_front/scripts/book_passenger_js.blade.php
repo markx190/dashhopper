@@ -1,6 +1,11 @@
 <script type="text/javascript">
 
 function submitBookPassenger(){
+    
+    var pTravelId = $('.p-travel-id').val();
+    var pTravelIdNo = $('.p-travel-id-no').val();
+    var pBusNo = $('.p-bus-no').val();
+    var pBusIdNo = $('.p-bus-id-no').val();
 
     var pFirstName = $('.p-first-name').val();
     var pLastName = $('.p-last-name').val();
@@ -85,6 +90,32 @@ function submitBookPassenger(){
 		gender = inputGender.val();
         $('#p-gender-text').text('');
     });
+
+    if(pFirstName && pLastName && pAge && pContactNo && pAddress){
+        callAddPassenger();
+    }
+        function callAddPassenger(){
+        console.log('id: ', jobId);
+        $.ajax({
+            url: "{{ url('/add_pasengers') }}",
+                method: 'POST',
+                data: { 
+                _token: function() {
+                return "{{ csrf_token() }}"
+            },
+            jobId,
+            eJobName,
+            ePositionType,
+          
+            },
+            cache: false,
+            success:function(html){
+                $('.edit-alert-m').html('<div class="row"><div class="col-md-12 alert-margin"><div class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> Job was successfully updated.</div></div></div>'); 
+                setTimeout(goToListOfJobs, 3000);
+                }
+            });
+        }
+    
 
 }
 </script>
