@@ -1,15 +1,35 @@
 @include('app_front.layouts.app_header')
 <div class="container search-spinner">
-    <div class="header-space"></div>
-        <header class="jumbotron my-4 header-image">
-            <h1 class="display-h1">Your transit booking buddy</h1>
-                <div class="row">
-                    <div class="col-md-6">
-                    <div class="form-group">
-                </div>
-            </div>
+<br>
+<div id="xped" class="carousel slide" data-ride="carousel">
+<!-- Indicators -->
+<ul class="carousel-indicators">
+    <li data-target="#xped" data-slide-to="0" class="active"></li>
+    <li data-target="#xped" data-slide-to="1"></li>
+    <li data-target="#xped" data-slide-to="2"></li>
+</ul>
+<!-- The slideshow -->
+<div class="carousel-inner">
+    <div class="carousel-item active" style="height: 25em;">
+    <img src="/images/bus_footer_image.jpg" alt="Los Angeles" />
+</div>
+<div class="carousel-item" style="height: 25em;">
+    <img src="/images/travel_banner.jpeg" alt="Chicago" />
+</div>
+<div class="carousel-item" style="height: 25em;">
+    <img src="/images/bus_footer_image.jpg" alt="New York" />
+    </div>
+</div>
+<!-- Left and right controls -->
+<a class="carousel-control-prev" href="#xped" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#xped" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</a>
         </div>
     </header>
+<br>
 <div class="row">
     <div class="col-md-12">
         <b>When are you travelling? Check our daily provincial trip schedules</b>
@@ -77,22 +97,25 @@
         </div>
     <div class="col-md-12">
         Safety Information
-        </div>
-    <div class="col-md-12">
-        Refund and Cancellation
-        </div>
-    <div class="col-md-12">
-        Payment Methods
-        </div>
-    <div class="col-md-12">
-        Travel Response
-        </div>
     </div>
+    <div class="col-md-12">
+        Terms
+    </div>
+    <div class="col-md-12">
+        Privacy Policy
+    </div>
+</div>
 <div class="row">
     <div class="col-md-3">
         <i class="fa fa-paymaya"></i>  
         </div>
     </div>
 </div>
+<style>
+    /* Make the image fully responsive */
+    .carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+</style>
 @extends('app_front.layouts.app_footer')
-

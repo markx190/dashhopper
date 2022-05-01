@@ -1,17 +1,25 @@
 <script type="text/javascript">
 
 function submitBookPassenger(){
-    
-    var pTravelId = $('.p-travel-id').val();
     var pTravelIdNo = $('.p-travel-id-no').val();
-    var pBusNo = $('.p-bus-no').val();
+    var pBusNo = $('.p-bus-number').val();
+    var pSeatNo = $('.p-seat-no').val();
     var pBusIdNo = $('.p-bus-id-no').val();
-
+    var pBusType = $('.p-bus-type').val();
+    var pCompanyName = $('.p-company-name').val();
     var pFirstName = $('.p-first-name').val();
+    var pMiddleName = $('.p-middle-name').val();
     var pLastName = $('.p-last-name').val();
     var pAge = $('.p-age').val();
     var pContactNo = $('.p-contact-no').val();
     var pAddress = $('.p-address').val();
+    var pOriginAddress = $('.p-origin-address').val();
+    var pDestinationAddress = $('.p-destination-address').val();
+    var pSiteTerminal = $('.p-site-terminal').val();
+    var pFareAmount = $('.p-fare-amount').val();
+    var pTravelDate = $('.p-travel-date').val();
+    var pTravelTime = $('.p-travel-time').val();
+    var pTimeAp = $('.p-time-ap').val();
 
     const checkMale = $('#male:input:radio').is(':checked');
 	const checkFemale = $('#female:input:radio').is(':checked');
@@ -68,11 +76,11 @@ function submitBookPassenger(){
 
     var gender = '';
     if (checkMale == true){
-        var inputGender = $('#male:input[name="user_gender"]');
+        var inputGender = $('#male:input[name="gender"]');
 		gender = inputGender.val();
 
     } else if (checkFemale == true){
-		var inputGender = $('#female:input[name="user_gender"]');
+		var inputGender = $('#female:input[name="gender"]');
 		gender = inputGender.val();
 		
 	} else {
@@ -80,13 +88,13 @@ function submitBookPassenger(){
 	}
 
     $('.c-male').on('click', function(){
-        var inputGender = $('#male:input[name="user_gender"]');
+        var inputGender = $('#male:input[name="gender"]');
 		gender = inputGender.val();
         $('#p-gender-text').text('');
     });
 
     $('.c-female').on('click', function(){
-        var inputGender = $('#female:input[name="user_gender"]');
+        var inputGender = $('#female:input[name="gender"]');
 		gender = inputGender.val();
         $('#p-gender-text').text('');
     });
@@ -94,28 +102,47 @@ function submitBookPassenger(){
     if(pFirstName && pLastName && pAge && pContactNo && pAddress){
         callAddPassenger();
     }
-        function callAddPassenger(){
-        console.log('id: ', jobId);
+    var refNumber = '';
+    function callAddPassenger(){
         $.ajax({
-            url: "{{ url('/add_pasengers') }}",
+            url: "{{ url('/add_passenger') }}",
                 method: 'POST',
                 data: { 
                 _token: function() {
                 return "{{ csrf_token() }}"
             },
-            jobId,
-            eJobName,
-            ePositionType,
-          
+            pTravelIdNo,
+            pBusNo,
+            pSeatNo,
+            pBusIdNo,
+            pBusType,
+            pCompanyName,
+            pFirstName,
+            pMiddleName,
+            pLastName,
+            pAge,
+            gender,
+            pContactNo,
+            pAddress,
+            pOriginAddress,
+            pDestinationAddress,
+            pSiteTerminal,
+            pFareAmount,
+            pTravelDate,
+            pTravelTime,
+            pTimeAp
             },
             cache: false,
-            success:function(html){
-                $('.edit-alert-m').html('<div class="row"><div class="col-md-12 alert-margin"><div class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> Job was successfully updated.</div></div></div>'); 
-                setTimeout(goToListOfJobs, 3000);
-                }
-            });
-        }
-    
-
+            dateType: 'JSON',
+            success:function(response){
+                refNumber = response;
+                $('.book-confirm').html('<div class="row"><div class="col-md-12 alert-margin"><div class="alert alert-success"><div class="fa fa-spinner fa-spin"></div> Thank you, your booking has been processed</div></div></div>'); 
+                setTimeout(redirectToHome, 3000);
+            }
+        });
+    }
+    function redirectToHome(){
+        window.location.href = "/complete_your_booking/"+ refNumber;
+    }
 }
 </script>

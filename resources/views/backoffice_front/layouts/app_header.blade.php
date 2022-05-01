@@ -5,7 +5,7 @@
                 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
                 <meta name="description" content="">
                 <meta name="author" content="">
-                <title>Dashhopper</title>
+                <title>Xpedhub</title>
                 <!-- Bootstrap core CSS -->
                 <link href="/bookhivez/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
                 <link href="/bookhivez/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -16,7 +16,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top d-back">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 22px;">dashhopper</a>
+        <a class="navbar-brand" href="{{ url('/') }}" style="font-size: 22px;">xpedhub</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>

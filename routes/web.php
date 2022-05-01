@@ -40,8 +40,9 @@ Route::post('/search_trips', 'Velhopper\SearchTripsController@callSearchTrips');
 Route::get('/select_trip_seat/{id}', 'Velhopper\SelectTripSeatController@callSelectTripSeat');
 // Book Passenger
 Route::get('/book_passenger/{id}/{seatNo}', 'Velhopper\BookPassengersController@bookPassenger');
-Route::get('/add_passenger', 'Velhopper\BookPassengersController@addPassenger');
-
+Route::post('/add_passenger', 'Velhopper\BookPassengersController@addPassenger');
+// Complete Booking
+Route::get('/complete_your_booking/{refNumber}', 'Velhopper\BookPassengersController@completeBooking');
 
 // Manage Employees
 Route::get('/manage_employees', 'Velhopper\ManageEmployeesController@index')->middleware('authenticated');
@@ -96,7 +97,6 @@ Route::post('/preferences', 'UserController@update_avatar');
 Route::post('/check-email', 'CheckEmailController@emailHandler');
 Route::post('/check-client-email', 'CheckEmailController@clientEmailHandler');
 Route::post('/checkCredentials', 'CheckCredsController@credentialsHandler');
-
 
 // Preferences
 Route::get('/goToChangeAvatar', 'UserController@goToChangeAvatar');

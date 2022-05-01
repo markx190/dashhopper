@@ -82,7 +82,7 @@
     </div>    
     @empty
         <div class="col-md-6">
-            <p>Sorry, No Results Found</p>
+            <p>Sorry, No Schedules Found</p>
         </div>
     @endforelse
 </div>

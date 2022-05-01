@@ -39,4 +39,14 @@ class BookPassengersController extends Controller
         }
     }
 
+    public function completeBooking(Request $request)
+    {
+        try {
+            $addPassengers = $this->bookPassenger->completeBooking($request);
+            return $addPassengers;
+        } catch (Exception $e){
+            return $e->getMessage();
+        }
+    }
+
 }

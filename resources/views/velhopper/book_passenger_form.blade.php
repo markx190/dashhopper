@@ -1,6 +1,8 @@
 @include('app_front.layouts.app_header')
 <br />
 <div class="container">
+    <div class="book-confirm">
+    </div>
     <div class="col-md-5">
         Bus: <b>{{ $tripBooking->bus_number }} - {{ $tripBooking->company_name }} - {{ $tripBooking->bus_type }}</b>
             <br>
@@ -19,13 +21,13 @@
 <br>
 <div class="container">
     <div class="col-md-3">
-        <label>Bus Seat No.</label>
+        <label><b>Bus Seat No.</b></label>
         <input type="text" class="form-control p-seat-no" value="{{ $seatNo }}" name="seat_no" readonly />
-        <input type="hidden" class="form-control p-travel-id" value="{{ $tripBooking->id }}" name="travel_id" />
         <input type="hidden" class="form-control p-travel-id-no" value="{{ $tripBooking->travel_id_no }}" name="travel_id_no" />
-        <input type="hidden" class="form-control p-bus-number" value="{{ $tripBooking->bus_no }}" name="bus_no" />
+        <input type="hidden" class="form-control p-bus-number" value="{{ $tripBooking->bus_number }}" name="bus_no" />
         <input type="hidden" class="form-control p-bus-id-no" value="{{ $tripBooking->bus_id_no }}" name="bus_id_no" />
         <input type="hidden" class="form-control p-bus-type" value="{{ $tripBooking->bus_type }}" name="bus_type" />
+        <input type="hidden" class="form-control p-company-name" value="{{ $tripBooking->company_name }}" name="bus_type" />
         <input type="hidden" class="form-control p-site-terminal" value="{{ $tripBooking->site_terminal }}" name="site_terminal" />
         <input type="hidden" class="form-control p-origin-address" value="{{ $tripBooking->origin_address }}" name="origin_address" />
         <input type="hidden" class="form-control p-destination-address" value="{{ $tripBooking->destination_address }}" name="destination_address" />
@@ -35,39 +37,39 @@
         <input type="hidden" class="form-control p-time-ap" value="{{ $tripBooking->time_ap }}" name="time_ap" />
     </div>
     <div class="col-md-3">
-        <label>Firstname</label>
+        <label><b>Firstname</b></label>
             <input type="text" class="form-control p-first-name" name="first_name" />
         <span id="p-first-name-text"></span>
     </div>
     <div class="col-md-3">
-        <label>Middlename</label>
-            <input type="text" class="form-control" name="middle_name" />
+        <label><b>Middlename</b></label>
+            <input type="text" class="form-control p-middle-name" name="middle_name" />
     </div>
     <div class="col-md-3">
-        <label>Lastname</label>
+        <label><b>Lastname</b></label>
             <input type="text" class="form-control p-last-name" name="last_name" />
         <span id="p-last-name-text"></span>
     </div>
     <br>
     <div class="col-md-3">
-        <label>Gender</label>
+        <label><b>Gender</b></label>
             <input class="radio c-male" id="male" type="radio" value="Male" name="gender"> Male
 	        <input class="radio c-female" id="female" type="radio" value="Female" name="gender"> Female
             <br>
         <span id="p-gender-text"></span>
     </div>
     <div class="col-md-3">
-        <label>Age</label>
+        <label><b>Age</b></label>
             <input type="number" class="form-control p-age" name="age" />
         <span id="p-age-text"></span>
     </div>
     <div class="col-md-3">
-        <label>Contact Number</label>
+        <label><b>Contact Number</b></label>
             <input type="text" class="form-control p-contact-no" name="p_contact_no" />
         <span id="p-contact-no-text"></span>
     </div>
-    <div class="col-md-6">
-        <label>Address</label>
+    <div class="col-md-12">
+        <label><b>Address</b></label>
             <input type="text" class="form-control p-address" name="p_address" />
         <span id="p-address-text"></span>
     </div>
@@ -79,7 +81,7 @@
     </div>
 <br>
 <div class="col-md-12">
-    <i class="fa fa-newspaper-o"></i> Passengers are required to report immediately to the terminal with their belongings 1 hour before departure. Bring your Vaccination Passport and valid Identification Cards.</p>
+    <i class="fa fa-tasks"></i> Passengers are required to report immediately to the terminal with their belongings 1 hour before departure. Bring your Vaccination Passport and valid Identification Cards.</p>
     </div>
 </div>
 @extends('app_front.layouts.app_footer')

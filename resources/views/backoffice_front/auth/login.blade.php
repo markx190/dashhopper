@@ -33,7 +33,7 @@
     <div class="form-group">
         <div class="col-md-12">    
             <button type="button" id="login-button" class="btn btn-primary" onclick="submitLogin(event)">
-                Login
+                <i class="fa fa-sign-in"></i> Login
             </button>
         <!-- <a id="forgotPassword" class="btn btn-link" href="{{ url('/forgot-password') }}">Forgot password?</a>               -->
    <span id="cred-match-text"></span>  
